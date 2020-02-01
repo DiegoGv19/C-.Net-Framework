@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Data.gov.sg.Models.Graduates_From_University>
+
+@{
+    ViewBag.Title = "Tabla";
+}
+    <html lang="en">
+        <head>
+            <title>Tabla</title>
+            <link href="~/Content/Site.css"  rel="stylesheet" type="text/css"/>
+        </head>
+        <body>
+            <header class="header">
+                    <div class="header-logo">
+                        <img src="~/Content/logo.svg" alt="logo">
+                        <p>Data.gov.sg</p>
+                    </div>
+                    <div class="header-menu">
+                        <a href="#">Topics</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Developers</a>
+                        <a href="#">Data Request</a>
+                    </div>
+                
+            </header>
+            <main>
+                <div class="main">
+                    <div class="main-title">
+                        <h1>
+                            Graduates From University First Degree Courses By Type Of Course
+                        </h1>
+                        <button>Dowloand</button>
+                    </div>
+                    <div class="main-subtitle">
+                        <p>
+                            FILES IN THIS DATASET
+                        </p>
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Year)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sex)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TypeOfCourse)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NoOfGraduates)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Year)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sex)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TypeOfCourse)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoOfGraduates)
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+            </main>
+        </body>
+    </html>

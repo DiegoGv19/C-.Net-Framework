@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataGovSgModelStoreContainer" CdmEntityContainer="DataGovSgEntities">
+    <EntitySetMapping Name="Graduates_From_University">
+      <EntityTypeMapping TypeName="DataGovSgModel.Graduates_From_University">
+        <MappingFragment StoreEntitySet="Graduates From University">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="TypeOfCourse" ColumnName="TypeOfCourse" />
+          <ScalarProperty Name="NoOfGraduates" ColumnName="NoOfGraduates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

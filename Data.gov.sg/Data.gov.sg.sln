@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.gov.sg", "Data.gov.sg\Data.gov.sg.csproj", "{CD0646FD-9C63-4B04-931B-3F0AF60ABB9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0646FD-9C63-4B04-931B-3F0AF60ABB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0646FD-9C63-4B04-931B-3F0AF60ABB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0646FD-9C63-4B04-931B-3F0AF60ABB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0646FD-9C63-4B04-931B-3F0AF60ABB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA554BD5-4DB5-4C9A-AB56-39B81D81F4CE}
+	EndGlobalSection
+EndGlobal
