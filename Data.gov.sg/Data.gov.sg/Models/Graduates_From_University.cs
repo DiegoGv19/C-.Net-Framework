@@ -14,6 +14,10 @@ namespace Data.gov.sg.Models
     
     public partial class Graduates_From_University
     {
+        public Graduates_From_University()
+        {
+        }
+
         public int Id { get; set; }
         public int Year { get; set; }
         public string Sex { get; set; }

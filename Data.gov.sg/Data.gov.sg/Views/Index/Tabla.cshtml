@@ -1,90 +1,101 @@
-﻿@model IEnumerable<Data.gov.sg.Models.Graduates_From_University>
+﻿@model IPagedList<Data.gov.sg.Models.Graduates_From_University>
 
 @{
     ViewBag.Title = "Tabla";
 }
-    <html lang="en">
-        <head>
-            <title>Tabla</title>
-            <link href="~/Content/Site.css"  rel="stylesheet" type="text/css"/>
-            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
-        </head>
-        <body>
-            <header class="header">
-                    <div class="header-logo">
-                        <img src="~/Content/logo.svg" alt="logo">
-                        <p>Data.gov.sg</p>
-                    </div>
-                    <div class="header-menu">
-                        <a href="#">Topics</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Developers</a>
-                        <a href="#">Data Request</a>
-                    </div>
-                
-            </header>
-            <main>
-                <div class="main">
-                    <div class="main-title">
-                        <h1>
-                            Graduates From University First Degree Courses By Type Of Course
-                        </h1>
-                        <button>Dowloand</button>
-                    </div>
-                    <div class="main-subtitle">
-                        <p>
-                            FILES IN THIS DATASET
-                        </p>
-                    </div>
+
+@using PagedList.Mvc;
+@using PagedList;
+<html lang="en">
+<head>
+    <title>Tabla</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <img src="~/Content/logo.svg" alt="logo">
+            <p>Data.gov.sg</p>
+        </div>
+        <div class="header-menu">
+            <a href="#">Topics</a>
+            <a href="#">Blog</a>
+            <a href="#">Developers</a>
+            <a href="#">Data Request</a>
+        </div>
+
+    </header>
+    <main>
+        <div class="main">
+            <div class="main-title">
+                <h1>
+                    Graduates From University First Degree Courses By Type Of Course
+                </h1>
+                <button>Dowloand</button>
+            </div>
+            <div class="main-subtitle">
+                <p>
+                    FILES IN THIS DATASET
+                </p>
+            </div>
+        </div>
+        <div class="table">
+            <div class="table-aux">
+                <div class="table-subtitle">
+                    <h2>
+                        Graduates From University First Degree Courses By Type Of Course
+                    </h2>
                 </div>
-                <div class="table">
-                    <div class="table-aux">
-                        <div class="table-subtitle">
-                            <h2>
-                                Graduates From University First Degree Courses By Type Of Course
-                            </h2>   
-                        </div>
-                        <div class="table-deco">
+                <div class="table-deco">
 
-                        </div>
-                    </div>
-                    <table class="table-information">
-                        <tr>
-                            <th class="table-data">
-                                @Html.DisplayNameFor(model => model.Year)
-                            </th>
-                            <th class="table-data">
-                                @Html.DisplayNameFor(model => model.Sex)
-                            </th>
-                            <th class="table-data">
-                                @Html.DisplayNameFor(model => model.TypeOfCourse)
-                            </th>
-                            <th class="table-data">
-                                @Html.DisplayNameFor(model => model.NoOfGraduates)
-                            </th>
-                        </tr>
-
-                        @foreach (var item in Model)
-                        {
-                            <tr class="aaa">
-                                <td class="table-data">
-                                    @Html.DisplayFor(modelItem => item.Year)
-                                </td>
-                                <td class="table-data">
-                                    @Html.DisplayFor(modelItem => item.Sex)
-                                </td>
-                                <td class="table-data">
-                                    @Html.DisplayFor(modelItem => item.TypeOfCourse)
-                                </td>
-                                <td class="table-data">
-                                    @Html.DisplayFor(modelItem => item.NoOfGraduates)
-                                </td>
-
-                            </tr>
-                        }
-
-                    </table>
                 </div>
-            </main>
-        </body>
-    </html>
+            </div>
+            <table class="table-information">
+                <tr>
+                    <th class="table-data">
+                        @Html.DisplayNameFor(model => model.First().Year)
+                    </th>
+                    <th class="table-data">
+                        @Html.DisplayNameFor(model => model.First().Sex)
+                    </th>
+                    <th class="table-data">
+                        @Html.DisplayNameFor(model => model.First().TypeOfCourse)
+                    </th>
+                    <th class="table-data">
+                        @Html.DisplayNameFor(model => model.First().NoOfGraduates)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="aaa">
+                        <td class="table-data">
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                        <td class="table-data">
+                            @Html.DisplayFor(modelItem => item.Sex)
+                        </td>
+                        <td class="table-data">
+                            @Html.DisplayFor(modelItem => item.TypeOfCourse)
+                        </td>
+                        <td class="table-data">
+                            @Html.DisplayFor(modelItem => item.NoOfGraduates)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+        @Html.PagedListPager(Model, i => Url.Action("Tabla", "Index", new { i, search = Request.QueryString["search"] }))
+
+
+    </main>
+</body>
+</html>
+

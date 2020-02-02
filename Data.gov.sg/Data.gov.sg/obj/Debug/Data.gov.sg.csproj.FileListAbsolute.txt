@@ -87,3 +87,7 @@ C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\EntityFramewo
 C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\EntityFramework.SqlServer.dll
 C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\EntityFramework.xml
 C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\EntityFramework.SqlServer.xml
+C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\PagedList.dll
+C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\PagedList.Mvc.dll
+C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\PagedList.xml
+C:\Users\diego\Desktop\Tarea_Encargada\Data.gov.sg\Data.gov.sg\bin\PagedList.Mvc.xml
