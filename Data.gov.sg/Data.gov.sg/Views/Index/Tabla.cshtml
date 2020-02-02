@@ -56,16 +56,17 @@
             <table class="table-information">
                 <tr>
                     <th class="table-data">
-                        @Html.DisplayNameFor(model => model.First().Year)
+                        @Html.ActionLink("Year","Tabla",new { sortBy = ViewBag.SortYearParameter, search = Request.QueryString["search"]})
                     </th>
                     <th class="table-data">
-                        @Html.DisplayNameFor(model => model.First().Sex)
+
+                        @Html.ActionLink("Sex", "Tabla", new { sortBy = ViewBag.SortSexParameter, search = Request.QueryString["search"] })
                     </th>
                     <th class="table-data">
-                        @Html.DisplayNameFor(model => model.First().TypeOfCourse)
+                        @Html.ActionLink("TypeOfCourse", "Tabla", new { sortBy = ViewBag.SortTypeParameter, search = Request.QueryString["search"] })
                     </th>
                     <th class="table-data">
-                        @Html.DisplayNameFor(model => model.First().NoOfGraduates)
+                        @Html.ActionLink("NoOfGraduates", "Tabla", new { sortBy = ViewBag.NoOfGraduates, search = Request.QueryString["search"] })
                     </th>
                 </tr>
 

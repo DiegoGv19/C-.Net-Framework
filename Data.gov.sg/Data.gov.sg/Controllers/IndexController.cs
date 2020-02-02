@@ -13,7 +13,7 @@ namespace Data.gov.sg.Controllers
     {
 
 
-        public ActionResult Tabla(int? i)
+        public ActionResult Tabla(int? i, string sortBy)
         {
             if (!ModelState.IsValid)
             {
@@ -23,10 +23,39 @@ namespace Data.gov.sg.Controllers
 
             try
             {
+                ViewBag.SortYearParameter = sortBy == "Year" ? "Year desc" : "Year";
+                ViewBag.SortTypeParameter = sortBy == "Type" ? "Type desc" : "Type";
+
+                ViewBag.SortSexParameter = sortBy == "Sex" ? "Sex desc" : "Sex";
+                ViewBag.SortNumeroParameter = sortBy == "Numero" ? "Numero desc" : "Numero";
+
+
                 DataGovSgEntities db = new DataGovSgEntities();
 
-                List<Graduates_From_University> lista = db.Graduates_From_University.ToList();
-                return View(lista.ToPagedList(i ?? 1,6));
+
+                var lista = db.Graduates_From_University.AsQueryable();
+
+                switch (sortBy)
+                {
+                    case "Year":
+                        lista = lista.OrderByDescending(x => x.Year);
+                        break;
+                    case "Type":
+                        lista = lista.OrderByDescending(x => x.TypeOfCourse);
+                        break;
+                    case "Sex":
+                        lista = lista.OrderByDescending(x => x.Sex);
+                        break;
+                    case "Numero":
+                        lista = lista.OrderByDescending(x => x.NoOfGraduates);
+                        break;
+                    default:
+                        lista = lista;
+                        break;
+
+                }
+
+                return View(lista.ToList().ToPagedList(i ?? 1,6));
             }
             catch(Exception e)
             {
