@@ -7,6 +7,7 @@
         <head>
             <title>Tabla</title>
             <link href="~/Content/Site.css"  rel="stylesheet" type="text/css"/>
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
         </head>
         <body>
             <header class="header">
@@ -36,43 +37,54 @@
                         </p>
                     </div>
                 </div>
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Year)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Sex)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.TypeOfCourse)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NoOfGraduates)
-                        </th>
-                        <th></th>
-                    </tr>
+                <div class="table">
+                    <div class="table-aux">
+                        <div class="table-subtitle">
+                            <h2>
+                                Graduates From University First Degree Courses By Type Of Course
+                            </h2>   
+                        </div>
+                        <div class="table-deco">
 
-                    @foreach (var item in Model)
-                    {
+                        </div>
+                    </div>
+                    <table class="table-information">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Year)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Sex)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TypeOfCourse)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NoOfGraduates)
-                            </td>
-
+                            <th class="table-data">
+                                @Html.DisplayNameFor(model => model.Year)
+                            </th>
+                            <th class="table-data">
+                                @Html.DisplayNameFor(model => model.Sex)
+                            </th>
+                            <th class="table-data">
+                                @Html.DisplayNameFor(model => model.TypeOfCourse)
+                            </th>
+                            <th class="table-data">
+                                @Html.DisplayNameFor(model => model.NoOfGraduates)
+                            </th>
                         </tr>
-                    }
 
-                </table>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="aaa">
+                                <td class="table-data">
+                                    @Html.DisplayFor(modelItem => item.Year)
+                                </td>
+                                <td class="table-data">
+                                    @Html.DisplayFor(modelItem => item.Sex)
+                                </td>
+                                <td class="table-data">
+                                    @Html.DisplayFor(modelItem => item.TypeOfCourse)
+                                </td>
+                                <td class="table-data">
+                                    @Html.DisplayFor(modelItem => item.NoOfGraduates)
+                                </td>
+
+                            </tr>
+                        }
+
+                    </table>
+                </div>
             </main>
         </body>
     </html>
